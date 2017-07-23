@@ -1,0 +1,15 @@
+{
+  "name": "augwa-ssh",
+  "version": "0.1.0",
+  "author": "Akachi Ugwa",
+  "summary": "Manages the installation ssh package and its configurations",
+  "license": "Apache-2.0",
+  "source": "https://github.com/dugwa/puppet",
+  "project_page": "https://github.com/dugwa/puppet",
+  "issues_url": "https://github.com/dugwa/puppet/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
