@@ -42,7 +42,19 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class ntp {
-
-
+class ntp( 
+  String $package_name 		= $ntp::params::package_name,
+  String $package_ensure  	= $ntp::parmas::package_ensure,
+  String $config_file_name 	= $ntp::parmas::config_file_name,
+  String $config_file_mode	= $ntp::parmas::config_file_mode,
+  Array[String] $servers 	= $ntp::parmas::servers,
+  String $service_ensure	= $ntp::parmas::service_ensure,
+  String $service_name 		= $ntp::parmas::service_name,
+  Boolean $service_enable	= $ntp::parmas::service_enable,
+  Boolean $service_hasrestart	= $ntp::parmas::service_hasrestart,
+  Boolean $service_hasstatus	= $ntp::parmas::service_hasstatus,
+) inherits ::ntp::params {
+  class {'::ntp::install': }
+  -> class {'::ntp::config': }
+  ~> class {'::ntp::service': }
 }
