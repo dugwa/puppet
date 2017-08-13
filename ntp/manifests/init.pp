@@ -44,17 +44,17 @@
 #
 class ntp( 
   String $package_name 		= $ntp::params::package_name,
-  String $package_ensure  	= $ntp::parmas::package_ensure,
-  String $config_file_name 	= $ntp::parmas::config_file_name,
-  String $config_file_mode	= $ntp::parmas::config_file_mode,
-  Array[String] $servers 	= $ntp::parmas::servers,
-  String $service_ensure	= $ntp::parmas::service_ensure,
-  String $service_name 		= $ntp::parmas::service_name,
-  Boolean $service_enable	= $ntp::parmas::service_enable,
-  Boolean $service_hasrestart	= $ntp::parmas::service_hasrestart,
-  Boolean $service_hasstatus	= $ntp::parmas::service_hasstatus,
+  String $package_ensure  	= $ntp::params::package_ensure,
+  String $config_file_name 	= $ntp::params::config_file_name,
+  String $config_file_mode	= $ntp::params::config_file_mode,
+  Array[String] $servers 	= $ntp::params::servers,
+  String $service_ensure	= $ntp::params::service_ensure,
+  String $service_name 		= $ntp::params::service_name,
+  Boolean $service_enable	= $ntp::params::service_enable,
+  Boolean $service_hasrestart	= $ntp::params::service_hasrestart,
+  Boolean $service_hasstatus	= $ntp::params::service_hasstatus,
 ) inherits ::ntp::params {
-  class {'::ntp::install': }
-  -> class {'::ntp::config': }
-  ~> class {'::ntp::service': }
+  class {'ntp::install': }
+  -> class {'ntp::config': }
+  ~> class {'ntp::service': }
 }

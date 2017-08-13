@@ -1,5 +1,5 @@
 class ntp::config(
-  String $config_file_name      = $ntp::config_name,
+  String $config_file_name      = $ntp::config_file_name,
   String $config_file_mode 	= $ntp::config_file_mode,
   Array[String] $servers   	= $ntp::servers,
 ) {
